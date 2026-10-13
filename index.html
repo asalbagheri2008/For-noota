@@ -1,378 +1,732 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#160d19">
-<title>for noota ♡</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d18">
+  <title>A little letter for Nota 🐈‍⬛</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 22px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Tahoma, Arial, sans-serif;
-  color: #fff0f6;
-  background: radial-gradient(ellipse at top, #49243b, #211321 55%, #100c14);
-  overflow-x: hidden;
-}
+    :root {
+      --bg: #070b14;
+      --panel: #0d1422;
+      --blue: #8cbfff;
+      --light-blue: #dceaff;
+      --muted: #9aaac2;
+      --border: #263b5b;
+      --white: #eef4ff;
+    }
 
-.hearts {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.heart {
-  position: absolute;
-  bottom: -40px;
-  color: #ff9ec5;
-  animation: floatUp 9s linear infinite;
-  opacity: 0;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.heart:nth-child(1) { left: 8%; font-size: 24px; }
-.heart:nth-child(2) { left: 28%; font-size: 18px; animation-delay: 2s; }
-.heart:nth-child(3) { left: 49%; font-size: 28px; animation-delay: 4s; }
-.heart:nth-child(4) { left: 72%; font-size: 20px; animation-delay: 1s; }
-.heart:nth-child(5) { left: 90%; font-size: 25px; animation-delay: 3s; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 15% 15%, #13233d 0%, transparent 40%),
+        radial-gradient(ellipse at 90% 80%, #101c32 0%, transparent 38%),
+        var(--bg);
+      font-family: "Vazirmatn", sans-serif;
+    }
 
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 0; }
-  15% { opacity: 0.7; }
-  100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
-}
+    button {
+      font: inherit;
+    }
 
-.card {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 490px;
-  max-height: 92vh;
-  overflow-y: auto;
-  padding: 30px 22px;
-  text-align: center;
-  background: rgba(31, 19, 34, 0.96);
-  border: 1px solid rgba(255, 171, 207, 0.4);
-  border-radius: 26px;
-  box-shadow: 0 0 45px rgba(245, 112, 171, 0.16);
-}
+    .stars {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-.cat {
-  font-size: 48px;
-  margin-bottom: 8px;
-}
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #dceaff;
+      border-radius: 50%;
+      opacity: 0.65;
+      animation: twinkle 3s ease-in-out infinite alternate;
+    }
 
-.eyebrow {
-  color: #e7a4c1;
-  font-size: 12px;
-  direction: ltr;
-}
+    @keyframes twinkle {
+      from {
+        opacity: 0.2;
+        transform: scale(0.7);
+      }
+      to {
+        opacity: 0.9;
+        transform: scale(1.4);
+      }
+    }
 
-h1 {
-  color: #ffb9d5;
-  font-size: 24px;
-  line-height: 1.9;
-  margin: 15px 0;
-}
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 28px, 680px);
+      margin: 0 auto;
+      padding: 48px 0 35px;
+    }
 
-p {
-  font-size: 14px;
-  line-height: 2.3;
-}
+    .top {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeIn 1.2s ease both;
+    }
 
-.intro {
-  color: #f4dbe7;
-  margin: 16px 0 25px;
-}
+    .tiny-cat {
+      font-size: 34px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 12px #527dbb);
+    }
 
-button {
-  font-family: inherit;
-  font-size: 14px;
-  padding: 13px 20px;
-  margin: 6px 3px;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: 0.2s;
-}
+    .eyebrow {
+      color: var(--blue);
+      font-family: "Playfair Display", serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      direction: ltr;
+    }
 
-button:active {
-  transform: scale(0.96);
-}
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      font-size: clamp(35px, 9vw, 56px);
+      direction: ltr;
+      margin: 12px 0 8px;
+      color: var(--light-blue);
+      text-shadow: 0 0 35px #477bb755;
+    }
 
-.main-btn {
-  background: #f5a4c6;
-  color: #2c1321;
-  border: 1px solid #f5a4c6;
-  font-weight: bold;
-}
+    .subtitle {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 300;
+    }
 
-.main-btn:hover {
-  background: #ffc5dd;
-}
+    .intro {
+      text-align: center;
+      color: #c4d2e7;
+      line-height: 2.1;
+      font-size: 14px;
+      margin: 25px auto 30px;
+      max-width: 430px;
+    }
 
-.secondary-btn {
-  background: transparent;
-  color: #ffd4e5;
-  border: 1px solid #d48bab;
-}
+    .envelope-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      margin: 35px 0 25px;
+    }
 
-.letter {
-  display: none;
-  text-align: right;
-  margin-top: 22px;
-  padding: 20px 16px;
-  border-radius: 19px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 181, 211, 0.2);
-  animation: fadeIn 0.7s ease;
-}
+    .envelope-button {
+      position: relative;
+      width: 190px;
+      height: 138px;
+      border: 1px solid #496a98;
+      border-radius: 9px;
+      background: linear-gradient(145deg, #152744, #0b1424);
+      cursor: pointer;
+      box-shadow: 0 12px 45px #0008, 0 0 30px #477bb722;
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+    }
 
-.letter h2 {
-  color: #ffb6d2;
-  text-align: center;
-  font-size: 22px;
-  line-height: 1.9;
-}
+    .envelope-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 45px #0009, 0 0 35px #477bb744;
+    }
 
-.letter p {
-  color: #f8e6ef;
-  margin: 17px 0;
-}
+    .envelope-button::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: linear-gradient(150deg, #243e62, #13243d);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      border-bottom: 1px solid #496a98;
+      transform-origin: top;
+      transition: transform 0.6s ease;
+      z-index: 2;
+    }
 
-.highlight {
-  color: #ffb6d2;
-  font-weight: bold;
-}
+    .envelope-button.opened::before {
+      transform: rotateX(180deg);
+    }
 
-.english-question {
-  direction: ltr;
-  text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 20px !important;
-  line-height: 1.8 !important;
-  color: #ffb6d2 !important;
-  margin: 27px 0 !important;
-}
+    .envelope-flap {
+      position: absolute;
+      left: 50%;
+      top: 47px;
+      transform: translateX(-50%);
+      font-size: 31px;
+      z-index: 3;
+      filter: drop-shadow(0 0 8px #8cbfff66);
+    }
 
-.response {
-  display: none;
-  text-align: center;
-  padding: 17px 8px 5px;
-  animation: fadeIn 0.5s ease;
-}
+    .envelope-label {
+      color: var(--blue);
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
 
-.response h2 {
-  font-size: 21px;
-}
+    .hint {
+      color: #7186a5;
+      font-size: 12px;
+    }
 
-.response p {
-  text-align: center;
-}
+    .letter-wrap {
+      display: none;
+      margin-top: 35px;
+      animation: letterIn 1s ease both;
+    }
 
-.footer {
-  color: #b991a7;
-  font-size: 12px;
-  margin-top: 25px;
-  direction: ltr;
-}
+    .letter-wrap.visible {
+      display: block;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .letter {
+      position: relative;
+      padding: clamp(22px, 5vw, 42px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background:
+        radial-gradient(ellipse at 100% 0%, #17274466, transparent 40%),
+        linear-gradient(155deg, #0e1727, #080e19 75%);
+      box-shadow: 0 20px 65px #0006, inset 0 0 35px #19305218;
+    }
 
-@media (max-width: 380px) {
-  .card { padding: 23px 15px; }
-  h1 { font-size: 22px; }
-  .letter { padding: 17px 12px; }
-  .english-question { font-size: 18px !important; }
-}
-</style>
+    .letter-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 17px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #263b5b;
+    }
+
+    .letter-top span:first-child {
+      color: var(--blue);
+      font-family: "Playfair Display", serif;
+      font-size: 13px;
+      direction: ltr;
+    }
+
+    .cat {
+      font-size: 24px;
+      filter: drop-shadow(0 0 8px #477bb755);
+    }
+
+    .letter p {
+      font-size: 14px;
+      line-height: 2.5;
+      color: #d5dfef;
+      font-weight: 300;
+      margin: 0 0 22px;
+    }
+
+    .letter .english {
+      direction: ltr;
+      text-align: center;
+      color: var(--light-blue);
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: clamp(17px, 4.5vw, 21px);
+      line-height: 1.9;
+      margin: 28px 0 8px;
+    }
+
+    .letter .source {
+      direction: ltr;
+      text-align: center;
+      color: #7f9dc5;
+      font-size: 11px;
+      line-height: 1.8;
+      margin-bottom: 27px;
+    }
+
+    .section-label {
+      direction: ltr;
+      text-align: center;
+      color: var(--blue);
+      font-family: "Playfair Display", serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin: 38px 0 22px;
+    }
+
+    .letter .final-question {
+      direction: ltr;
+      text-align: center;
+      color: #e1edff;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: clamp(22px, 5.7vw, 31px);
+      line-height: 1.8;
+      margin: 32px 0 18px;
+    }
+
+    .letter .signature {
+      text-align: center;
+      color: var(--blue);
+      font-size: 20px;
+      margin: 20px 0 0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #6286b8;
+      margin: 28px 0;
+      font-size: 13px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: #263b5b;
+    }
+
+    .question-area {
+      text-align: center;
+      margin-top: 35px;
+      padding: 28px 18px;
+      border: 1px solid #263b5b;
+      border-radius: 16px;
+      background: #0c1422cc;
+    }
+
+    .question-area h2 {
+      font-family: "Playfair Display", serif;
+      direction: ltr;
+      color: var(--blue);
+      font-size: 21px;
+      font-weight: 500;
+      margin: 0 0 10px;
+    }
+
+    .question-area p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+      margin: 0 0 22px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .choice {
+      border: 1px solid #496a98;
+      border-radius: 9px;
+      background: #13233a;
+      color: #dceaff;
+      padding: 11px 24px;
+      cursor: pointer;
+      transition: all 0.25s;
+      font-size: 13px;
+    }
+
+    .choice:hover {
+      background: #203958;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px #477bb722;
+    }
+
+    .choice.yes {
+      background: #294b76;
+      border-color: #8cbfff;
+    }
+
+    .response {
+      display: none;
+      margin-top: 23px;
+      padding: 17px;
+      border: 1px solid #263b5b;
+      border-radius: 10px;
+      background: #101d30;
+      color: #dceaff;
+      line-height: 2.2;
+      font-size: 14px;
+      animation: fadeIn 0.5s ease both;
+    }
+
+    .response.show {
+      display: block;
+    }
+
+    .response .cat {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      color: #647995;
+      font-size: 11px;
+      direction: ltr;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes letterIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .page {
+        width: min(100% - 22px, 680px);
+        padding-top: 35px;
+      }
+
+      .letter {
+        padding: 22px 19px;
+      }
+
+      .letter p {
+        font-size: 13px;
+        line-height: 2.4;
+      }
+
+      .envelope-button {
+        width: 170px;
+        height: 125px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="stars" id="stars"></div>
 
-<div class="hearts" aria-hidden="true">
-  <span class="heart">♡</span>
-  <span class="heart">♥</span>
-  <span class="heart">♡</span>
-  <span class="heart">♥</span>
-  <span class="heart">♡</span>
-</div>
-
-<main class="card">
-
-  <div id="start">
-    <div class="cat">🐈‍⬛</div>
-    <div class="eyebrow">a little something for you ♡</div>
-
-    <h1>یه چیزی هست که عسل می‌خواد بهت بگه...</h1>
+  <main class="page">
+    <header class="top">
+      <div class="tiny-cat">🐈‍⬛</div>
+      <div class="eyebrow">A LITTLE LETTER FOR</div>
+      <h1>Nota</h1>
+      <div class="subtitle">a little something, just for you</div>
+    </header>
 
     <p class="intro">
-      نوتا، این نامه برای یه دختر خیلی خاصه.
+      بعضی حرف‌ها رو نمی‌شه توی یه گفت‌وگوی معمولی جا داد.
       <br>
-      برای توئه، با تمام حس‌های قشنگی که توی دلم دارم. ♡
+      برای همین، این یکی رو برات نوشتم.
     </p>
 
-    <button class="main-btn" onclick="openLetter()">
-      نامه‌تو باز کن 💌
-    </button>
-  </div>
-
-  <section class="letter" id="letter">
-
-    <h2>برای نوتای من، از ته قلبم ♡</h2>
-
-    <p>
-      نوتا، نمی‌دونم دقیقاً از کِی این‌قدر برام خاص شدی.
-      شاید از همون گفت‌وگوهای ساده‌ای که کم‌کم تبدیل شدن
-      به یکی از قسمت‌های قشنگ روزهام.
-      فقط می‌دونم حالا دیدن اسم تو روی صفحه‌ی گوشیم،
-      خوندن پیام‌هات و حرف زدن باهات چیزهاییه که
-      بیشتر از چیزی که فکر می‌کنی خوشحالم می‌کنن.
-    </p>
-
-    <p>
-      گاهی وسط یه روز کاملاً معمولی یهو بهت فکر می‌کنم
-      و لبخند می‌زنم. گاهی یه آهنگ می‌شنوم و دلم می‌خواد
-      تو هم بشنویش. گاهی یه اتفاق بامزه می‌افته و اولین
-      کسی که دوست دارم براش تعریف کنم تویی.
-      این چیزها شاید خیلی ساده باشن، ولی برای من
-      همون جزئیات کوچیکی‌ان که باعث می‌شن یه نفر
-      کم‌کم جای خاصی توی قلب آدم پیدا کنه.
-    </p>
-
-    <p>
-      دلم می‌خواد بیشتر بشناسمت؛ نه فقط چیزهایی که
-      همه ازت می‌دونن، بلکه فکرهات، آرزوهات،
-      چیزهایی که خوشحالت می‌کنن و حتی چیزهایی که
-      گاهی اذیتت می‌کنن.
-      دلم می‌خواد از معمولی‌ترین اتفاقات روزت برام بگی،
-      از آهنگ‌هایی که دوست داری، از چیزهایی که ذوقت رو زیاد
-      می‌کنن و از هر چیزی که دوست داری باهام شریک بشی.
-      چون وقتی پای تو وسطه، حتی ساده‌ترین حرف‌ها هم
-      برای من قشنگ می‌شن.
-    </p>
-
-    <p>
-      دوست دارم یه روز به جایی برسیم که با هم شوخی‌های
-      مخصوص خودمون رو داشته باشیم؛ آهنگ برای هم بفرستیم،
-      از چیزهای بی‌اهمیت بخندیم، شب‌ها بیشتر حرف بزنیم
-      و وقتی اتفاق خوبی می‌افته، یکی از اولین آدم‌هایی
-      باشیم که می‌خوایم بهش خبر بدیم.
-      دلم می‌خواد کنار تو خاطره‌هایی بسازم که
-      حتی سال‌ها بعد یادآوریشون لبخند بیاره روی صورتم.
-    </p>
-
-    <p>
-      اگه یه روز خسته باشی، دلم می‌خواد بتونم کنارت باشم.
-      اگه خوشحال باشی، دلم می‌خواد از خوشحالیت ذوق کنم.
-      اگه روز سختی داشته باشی، دوست دارم بدونی
-      لازم نیست همیشه وانمود کنی همه‌چی خوبه.
-      نمی‌خوام ازت یه آدم بی‌نقص بسازم؛
-      من می‌خوام خود واقعی تو رو بشناسم،
-      با تمام اخلاق‌های قشنگت و حتی عادت‌های عجیب‌وغریبت.
-    </p>
-
-    <p>
-      می‌دونی، فکر اینکه شاید یه روز بتونم تو رو
-      بیشتر از یه دوست صدا کنم، حس خیلی شیرینی داره.
-      اینکه بدونم من هم برای تو خاصم،
-      اینکه بتونیم راحت به هم محبت کنیم،
-      با هم بخندیم و بدون ترس از گفتن احساساتمون
-      همدیگه رو انتخاب کنیم.
-      دلم می‌خواد یه جای مخصوص توی زندگی هم داشته باشیم،
-      جایی که فقط متعلق به خودمون باشه. ♡
-    </p>
-
-    <p>
-      من ازت خوشم میاد، نوتا.
-      نه فقط به خاطر اینکه چقدر قشنگی،
-      بلکه به خاطر حسی که از شناختنت می‌گیرم،
-      به خاطر اینکه دلم می‌خواد بیشتر باهات حرف بزنم،
-      بیشتر بشناسمت و ببینم این آشنایی قشنگ
-      می‌تونه به چی تبدیل بشه.
-      تو برای من فقط یه چهره‌ی قشنگ روی صفحه نیستی؛
-      تو دختری هستی که دلم می‌خواد فرصت نزدیک‌تر شدن
-      بهش رو داشته باشم.
-    </p>
-
-    <p>
-      نمی‌خوام این حس رو برای همیشه توی دلم نگه دارم
-      و بعداً با خودم فکر کنم که اگه بهت می‌گفتم چی می‌شد.
-      برای همین تصمیم گرفتم این نامه رو بنویسم،
-      تا بدونی بودنت برای من چقدر قشنگه
-      و اینکه دلم می‌خواد این فرصت رو به خودمون بدیم.
-    </p>
-
-    <p style="text-align:center; font-size:18px;">
-      <strong>نوتا، دوست‌دخترم می‌شی؟ ♡</strong>
-    </p>
-
-    <p class="english-question">
-      To the pretty girl, will you be my fall in love this October? ♡
-    </p>
-
-    <div style="text-align:center;">
-      <button class="main-btn" onclick="answerYes()">
-        آره، می‌شم ♡
+    <section class="envelope-area">
+      <button class="envelope-button" id="envelope" aria-label="باز کردن نامه">
+        <span class="envelope-flap">✦</span>
       </button>
+      <div class="envelope-label">یه نامه برای تو</div>
+      <div class="hint">برای باز کردنش روی پاکت بزن</div>
+    </section>
 
-      <button class="secondary-btn" onclick="answerMaybe()">
-        بذار فکر کنم...
-      </button>
-    </div>
+    <section class="letter-wrap" id="letterWrap">
+      <article class="letter">
+        <div class="letter-top">
+          <span>a little letter for nota</span>
+          <span class="cat">🐈‍⬛</span>
+        </div>
 
-    <div class="response" id="yes">
-      <div style="font-size:38px;">💗🥹💗</div>
-      <h2>صبر کنننن، واقعاً؟! ♡</h2>
-      <p>یعنی این اکتبر قراره یه خاطره‌ی قشنگ بشه؟ 😭💗</p>
-      <p>بیا بغلمممم، دختر قشنگم ♡</p>
-    </div>
+        <p>نوتا،</p>
 
-    <div class="response" id="maybe">
-      <div style="font-size:35px;">😭🫵🏻💗</div>
-      <h2>شوسگول موسگوللل 😭</h2>
-      <p>
-        نتیجش برام نمیاد، گولم نزنننن 😭
-        <br>
-        بیا درست جواب بده ببینم منو می‌خوای یا نههههه ♡
-      </p>
-    </div>
+        <p>
+          نمی‌دونم از کجا باید شروع کنم؛ شاید بعضی حس‌ها رو نتونی درست توضیح بدی،
+          حتی وقتی توی ذهنت هزار بار مرورشون کردی.
+        </p>
 
-  </section>
+        <p>
+          فقط می‌دونم بعضی آدما بی‌سروصدا میان و یه جای کوچیک از فکر آدم رو برای
+          خودشون می‌کنن. بعد یهو می‌بینی یه آهنگ، یه جمله یا حتی یه لحظه‌ی معمولی،
+          تو رو یادشون می‌اندازه.
+        </p>
 
-  <div class="footer">made with love, just for you ♡</div>
+        <div class="english">
+          “I have for the first time found what I can truly love.”
+        </div>
+        <div class="source">— Jane Eyre, Charlotte Brontë</div>
 
-</main>
+        <p>
+          نمی‌دونم قراره این آشنایی ما رو به کجا ببره؛ شاید یه خاطره‌ی قشنگ بشه،
+          شاید شروع چیزی که هیچ‌کدوممون انتظارش رو نداشتیم. ولی دوست دارم به‌جای
+          حدس زدن پایانش، فرصت بدم داستانمون نوشته بشه.
+        </p>
 
-<script>
-function openLetter() {
-  document.getElementById("start").style.display = "none";
-  document.getElementById("letter").style.display = "block";
-  document.querySelector(".card").scrollTop = 0;
-}
+        <p>
+          و راستش، اگه قرار باشه از بین تمام اتفاق‌های غیرمنتظره‌ی این پاییز
+          یکی رو انتخاب کنم، احتمالاً انتخابم تویی.
+        </p>
 
-function answerYes() {
-  document.getElementById("yes").style.display = "block";
-  document.getElementById("maybe").style.display = "none";
-}
+        <div class="divider">🐈‍⬛</div>
 
-function answerMaybe() {
-  document.getElementById("maybe").style.display = "block";
-  document.getElementById("yes").style.display = "none";
-}
-</script>
+        <div class="section-label">THE WAY I SEE YOU</div>
 
+        <p>
+          نمی‌دونم خودت وقتی به آینه نگاه می‌کنی، خودت رو چطور می‌بینی؛
+          اما کاش می‌شد برای یه لحظه از چشم‌های من به خودت نگاه کنی.
+        </p>
+
+        <p>
+          به موهای فِرِت که انگار هیچ‌وقت قرار نیست دقیقاً همون‌جایی باشن که باید،
+          و شاید همین بی‌نظمیِ قشنگشونه که دوست‌داشتنی‌شون می‌کنه. به چشم‌های
+          قهوه‌ای‌ات؛ به اون رنگ گرمی که آدم دلش می‌خواد بیشتر از چند ثانیه توش مکث کنه.
+        </p>
+
+        <p>
+          نمی‌دونم چطور باید توضیح بدم که زیبایی بعضی آدما فقط به چیزی که می‌بینی
+          خلاصه نمی‌شه. گاهی توی جزئیات کوچیکی پنهونه که شاید خودشون حتی متوجهشون
+          نباشن؛ توی یه حالت صورت، یه نگاه، یا همون لحظه‌ای که بی‌خبر از همه‌چیز،
+          فقط خودشونن.
+        </p>
+
+        <div class="english">
+          “I wish I could show you, when you are lonely or in darkness,
+          the astonishing light of your own being.”
+        </div>
+        <div class="source">— commonly attributed to Hafiz</div>
+
+        <p>
+          شاید قشنگ‌ترین چیزی که می‌تونم بهت بگم این باشه که امیدوارم یه روز،
+          خودت رو همون‌قدر دوست‌داشتنی ببینی که از نگاه من هستی.
+        </p>
+
+        <div class="divider">🐈‍⬛</div>
+
+        <div class="section-label">SOMEWHERE BETWEEN YOUR WORDS</div>
+
+        <p>
+          و اما چیزی که شاید از همه سخت‌تر بتونم توضیحش بدم، حسیه که بهم می‌دی.
+        </p>
+
+        <p>
+          نمی‌دونم چطور ممکنه حرف زدن با یه نفر، این‌قدر آروم باشه. انگار برای
+          چند لحظه لازم نیست به چیزی فکر کنم، نگران چیزی باشم یا حواسم به گذشت
+          زمان باشه. فقط حرف می‌زنیم و من، بدون اینکه متوجه بشم، از دنیای اطرافم
+          فاصله می‌گیرم؛ نه چون می‌خوام ازش فرار کنم، بلکه چون برای چند لحظه،
+          همین‌جایی که هستم برام کافیه.
+        </p>
+
+        <p>
+          با تو، دقیقه‌ها یه جور عجیبی از دستم در می‌رن. میام چند تا حرف بزنم و
+          یهو می‌بینم زمان گذشته، بی‌اینکه بفهمم کِی. و شاید برای بقیه این فقط
+          یه گفت‌وگوی معمولی باشه، اما برای من، همین معمولی بودنش قشنگه. اینکه
+          لازم نیست اتفاق خارق‌العاده‌ای بیفته تا از بودن با یه نفر لذت ببرم.
+        </p>
+
+        <div class="english">
+          “There is a quiet kind of happiness in feeling at ease with someone.”
+        </div>
+        <div class="source">— an original line</div>
+
+        <p>
+          فکر می‌کنم آرامش همیشه به معنی سکوت کردن کنار یه نفر نیست. گاهی یعنی
+          بتونی ساعت‌ها باهاش حرف بزنی و نفهمی زمان چطور گذشته؛ یعنی بعد از یه
+          روز طولانی، صحبت کردن باهاش به‌جای اینکه خسته‌ترت کنه، یه گوشه‌ی آروم
+          توی ذهنت بسازه.
+        </p>
+
+        <p>
+          و نمی‌دونم اسم این حس رو دقیقاً چی باید بذارم. فقط می‌دونم بعضی مکالمه‌ها
+          وقتی تموم می‌شن، تموم نمی‌شن؛ یه تیکه‌شون باهات می‌مونه، حتی وقتی دیگه
+          گوشی دستت نیست.
+        </p>
+
+        <div class="english">maybe that's what makes you different.</div>
+
+        <div class="divider">🐈‍⬛</div>
+
+        <div class="section-label">I WANT TO KNOW YOU</div>
+
+        <p>
+          نمی‌خوام فقط قسمت‌های قشنگت رو بشناسم. دلم می‌خواد از چیزهای کوچیکی هم
+          بدونم که شاید برای بقیه مهم نباشن؛ از فکرهایی که نصفه‌شب به سرت می‌زنن،
+          از چیزهایی که خوشحالت می‌کنن و از روزهایی که ترجیح می‌دی کمتر حرف بزنی.
+        </p>
+
+        <p>
+          نمی‌خوام ازت یه تصویر بی‌نقص توی ذهنم بسازم. دلم می‌خواد خودت رو بشناسم؛
+          همون‌طوری که هستی، نه اون‌طوری که توی خیال من قشنگ‌تر به نظر می‌رسی.
+        </p>
+
+        <div class="english">
+          I want to know you, not just the idea of you.
+        </div>
+
+        <div class="divider">🐈‍⬛</div>
+
+        <div class="section-label">IF WE LET THIS STORY BEGIN</div>
+
+        <p>
+          شاید هنوز چیزهای زیادی درباره‌ی هم ندونیم. شاید هنوز کلی حرف مونده که
+          نزده‌ایم و کلی گوشه از وجودمون که برای هم غریبه‌ست. اما فکر می‌کنم
+          بعضی چیزها لازم نیست از همون اول معلوم باشن.
+        </p>
+
+        <p>
+          لازم نیست بدونیم آخر یه داستان قراره چی بشه تا بخوایم صفحه‌ی بعدش رو
+          بخونیم، نه؟
+        </p>
+
+        <p>
+          من نمی‌خوام عجله کنم و برای چیزی که هنوز داره شکل می‌گیره، اسم و رسم
+          بزرگی انتخاب کنم. فقط می‌خوام فرصت بدیم؛ به حرف‌هامون، به لحظه‌هایی که
+          کنار هم می‌گذرونیم، به چیزهایی که کم‌کم از هم کشف می‌کنیم.
+        </p>
+
+        <div class="english">
+          “What if this is the beginning of something beautiful?”
+        </div>
+        <div class="source">— an original line</div>
+
+        <p>
+          شاید این آشنایی تبدیل به چیزی بشه که حالا حتی نمی‌تونیم تصورش کنیم.
+          شاید هم مسیرش اون‌طوری که فکر می‌کنیم پیش نره. اما من ترجیح می‌دم
+          به‌جای اینکه از ترسِ پایان احتمالی، شروعش رو از دست بدم، بهش یه فرصت واقعی بدم.
+        </p>
+
+        <p>
+          چون به نظرم بعضی آدم‌ها ارزش این رو دارن که به‌جای فقط فکر کردن بهشون،
+          واقعاً قدمی به سمتشون برداری.
+        </p>
+
+        <p>
+          و من دلم می‌خواد اون قدم رو به سمت تو بردارم.
+        </p>
+
+        <div class="divider">🐈‍⬛</div>
+
+        <p class="final-question">
+          To the pretty girl,<br>
+          will you be my fall in love this October?
+        </p>
+
+        <p class="signature">🐈‍⬛</p>
+      </article>
+
+      <section class="question-area">
+        <h2>so, what do you say?</h2>
+        <p>یه سؤال کوچیک مونده، نوتا.</p>
+
+        <div class="buttons">
+          <button class="choice yes" id="yesBtn">آره، چرا که نه؟</button>
+          <button class="choice" id="maybeBtn">بذار فکر کنم...</button>
+        </div>
+
+        <div class="response" id="response"></div>
+      </section>
+    </section>
+
+    <footer>
+      made with a little courage, just for nota.
+      <br>
+      <span style="color:#6286b8">🐈‍⬛</span>
+    </footer>
+  </main>
+
+  <script>
+    // ساخت ستاره‌های پس‌زمینه
+    const stars = document.getElementById("stars");
+
+    for (let i = 0; i < 65; i++) {
+      const star = document.createElement("span");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.animationDelay = Math.random() * 3 + "s";
+      star.style.animationDuration = (2 + Math.random() * 3) + "s";
+      stars.appendChild(star);
+    }
+
+    // باز کردن پاکت و نمایش نامه
+    const envelope = document.getElementById("envelope");
+    const letterWrap = document.getElementById("letterWrap");
+
+    envelope.addEventListener("click", () => {
+      envelope.classList.add("opened");
+      letterWrap.classList.add("visible");
+
+      envelope.querySelector(".envelope-flap").textContent = "✧";
+      envelope.setAttribute("aria-label", "نامه باز شد");
+
+      setTimeout(() => {
+        letterWrap.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 250);
+    });
+
+    // پاسخ‌های پایانی
+    const response = document.getElementById("response");
+    const yesBtn = document.getElementById("yesBtn");
+    const maybeBtn = document.getElementById("maybeBtn");
+
+    yesBtn.addEventListener("click", () => {
+      response.innerHTML =
+        '<span class="cat">🐈‍⬛</span>' +
+        'پس این پاییز یه خاطره‌ی قشنگ برای ساختن داره. ' +
+        'ممنون که بهم فرصت دادی، نوتا. 🖤';
+      response.classList.add("show");
+      response.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    maybeBtn.addEventListener("click", () => {
+      response.innerHTML =
+        '<span class="cat">🐈‍⬛</span>' +
+        'شوسگول موسگوللل 😭<br>' +
+        'نتیجش برام نمیاد، گولم نزنننن 😭<br>' +
+        'بیا درست جواب بده ببینم منو می‌خوای یا نههههه ♡';
+      response.classList.add("show");
+      response.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  </script>
 </body>
 </html>
