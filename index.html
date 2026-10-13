@@ -1,732 +1,697 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d18">
-  <title>A little letter for Nota 🐈‍⬛</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d18">
+<title>A Little Letter for Nota 🐈‍⬛</title>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 
-    :root {
-      --bg: #070b14;
-      --panel: #0d1422;
-      --blue: #8cbfff;
-      --light-blue: #dceaff;
-      --muted: #9aaac2;
-      --border: #263b5b;
-      --white: #eef4ff;
-    }
+<style>
+:root {
+  --bg: #070b14;
+  --panel: #0d1422;
+  --blue: #8cbfff;
+  --light: #dceaff;
+  --muted: #9aaac2;
+  --border: #263b5b;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+html { scroll-behavior: smooth; }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      overflow-x: hidden;
-      color: var(--white);
-      background:
-        radial-gradient(ellipse at 15% 15%, #13233d 0%, transparent 40%),
-        radial-gradient(ellipse at 90% 80%, #101c32 0%, transparent 38%),
-        var(--bg);
-      font-family: "Vazirmatn", sans-serif;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #eef4ff;
+  background:
+    radial-gradient(ellipse at 15% 15%, #13233d 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 80%, #101c32 0%, transparent 38%),
+    var(--bg);
+  font-family: "Vazirmatn", sans-serif;
+}
 
-    button {
-      font: inherit;
-    }
+button { font: inherit; }
 
-    .stars {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-    }
+.stars {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
 
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: #dceaff;
-      border-radius: 50%;
-      opacity: 0.65;
-      animation: twinkle 3s ease-in-out infinite alternate;
-    }
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #dceaff;
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
 
-    @keyframes twinkle {
-      from {
-        opacity: 0.2;
-        transform: scale(0.7);
-      }
-      to {
-        opacity: 0.9;
-        transform: scale(1.4);
-      }
-    }
+@keyframes twinkle {
+  from { opacity: .15; transform: scale(.7); }
+  to { opacity: .9; transform: scale(1.4); }
+}
 
-    .page {
-      position: relative;
-      z-index: 1;
-      width: min(100% - 28px, 680px);
-      margin: 0 auto;
-      padding: 48px 0 35px;
-    }
+.page {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 28px, 680px);
+  margin: auto;
+  padding: 45px 0 35px;
+}
 
-    .top {
-      text-align: center;
-      margin-bottom: 30px;
-      animation: fadeIn 1.2s ease both;
-    }
+.top {
+  text-align: center;
+  margin-bottom: 28px;
+  animation: fadeIn 1.2s ease both;
+}
 
-    .tiny-cat {
-      font-size: 34px;
-      margin-bottom: 12px;
-      filter: drop-shadow(0 0 12px #527dbb);
-    }
+.tiny-cat {
+  font-size: 36px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 12px #527dbb);
+}
 
-    .eyebrow {
-      color: var(--blue);
-      font-family: "Playfair Display", serif;
-      font-size: 13px;
-      letter-spacing: 3px;
-      direction: ltr;
-    }
+.eyebrow {
+  color: var(--blue);
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  direction: ltr;
+}
 
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-weight: 500;
-      font-size: clamp(35px, 9vw, 56px);
-      direction: ltr;
-      margin: 12px 0 8px;
-      color: var(--light-blue);
-      text-shadow: 0 0 35px #477bb755;
-    }
+h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: clamp(38px, 10vw, 58px);
+  direction: ltr;
+  margin: 12px 0 8px;
+  color: var(--light);
+  text-shadow: 0 0 35px #477bb755;
+}
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 300;
-    }
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+}
 
-    .intro {
-      text-align: center;
-      color: #c4d2e7;
-      line-height: 2.1;
-      font-size: 14px;
-      margin: 25px auto 30px;
-      max-width: 430px;
-    }
+.intro {
+  text-align: center;
+  color: #c4d2e7;
+  line-height: 2.2;
+  font-size: 14px;
+  margin: 25px auto 32px;
+  max-width: 430px;
+}
 
-    .envelope-area {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      margin: 35px 0 25px;
-    }
+.envelope-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  margin: 35px 0 25px;
+}
 
-    .envelope-button {
-      position: relative;
-      width: 190px;
-      height: 138px;
-      border: 1px solid #496a98;
-      border-radius: 9px;
-      background: linear-gradient(145deg, #152744, #0b1424);
-      cursor: pointer;
-      box-shadow: 0 12px 45px #0008, 0 0 30px #477bb722;
-      transition: transform 0.3s, box-shadow 0.3s;
-      overflow: hidden;
-    }
+.envelope-button {
+  position: relative;
+  width: 190px;
+  height: 138px;
+  border: 1px solid #496a98;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #152744, #0b1424);
+  cursor: pointer;
+  box-shadow: 0 12px 45px #0008, 0 0 30px #477bb722;
+  transition: transform .3s, box-shadow .3s;
+  overflow: hidden;
+}
 
-    .envelope-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 45px #0009, 0 0 35px #477bb744;
-    }
+.envelope-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 45px #0009, 0 0 35px #477bb744;
+}
 
-    .envelope-button::before {
-      content: "";
-      position: absolute;
-      top: -1px;
-      left: 0;
-      right: 0;
-      height: 72px;
-      background: linear-gradient(150deg, #243e62, #13243d);
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-      border-bottom: 1px solid #496a98;
-      transform-origin: top;
-      transition: transform 0.6s ease;
-      z-index: 2;
-    }
+.envelope-button::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: linear-gradient(150deg, #243e62, #13243d);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-bottom: 1px solid #496a98;
+  transform-origin: top;
+  transition: transform .6s ease;
+  z-index: 2;
+}
 
-    .envelope-button.opened::before {
-      transform: rotateX(180deg);
-    }
+.envelope-button.opened::before {
+  transform: rotateX(180deg);
+}
 
-    .envelope-flap {
-      position: absolute;
-      left: 50%;
-      top: 47px;
-      transform: translateX(-50%);
-      font-size: 31px;
-      z-index: 3;
-      filter: drop-shadow(0 0 8px #8cbfff66);
-    }
+.envelope-flap {
+  position: absolute;
+  left: 50%;
+  top: 47px;
+  transform: translateX(-50%);
+  font-size: 31px;
+  z-index: 3;
+  color: var(--light);
+}
 
-    .envelope-label {
-      color: var(--blue);
-      font-size: 13px;
-      letter-spacing: 0.2px;
-    }
+.envelope-label {
+  color: var(--blue);
+  font-size: 13px;
+}
 
-    .hint {
-      color: #7186a5;
-      font-size: 12px;
-    }
+.hint {
+  color: #7186a5;
+  font-size: 12px;
+}
 
-    .letter-wrap {
-      display: none;
-      margin-top: 35px;
-      animation: letterIn 1s ease both;
-    }
+.letter-wrap {
+  display: none;
+  margin-top: 35px;
+}
 
-    .letter-wrap.visible {
-      display: block;
-    }
+.letter-wrap.visible {
+  display: block;
+  animation: letterIn 1s ease both;
+}
 
-    .letter {
-      position: relative;
-      padding: clamp(22px, 5vw, 42px);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background:
-        radial-gradient(ellipse at 100% 0%, #17274466, transparent 40%),
-        linear-gradient(155deg, #0e1727, #080e19 75%);
-      box-shadow: 0 20px 65px #0006, inset 0 0 35px #19305218;
-    }
+.letter {
+  padding: clamp(22px, 5vw, 42px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 100% 0%, #17274466, transparent 40%),
+    linear-gradient(155deg, #0e1727, #080e19 75%);
+  box-shadow: 0 20px 65px #0006, inset 0 0 35px #19305218;
+}
 
-    .letter-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      padding-bottom: 17px;
-      margin-bottom: 25px;
-      border-bottom: 1px solid #263b5b;
-    }
+.letter-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 17px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--border);
+}
 
-    .letter-top span:first-child {
-      color: var(--blue);
-      font-family: "Playfair Display", serif;
-      font-size: 13px;
-      direction: ltr;
-    }
+.letter-top span:first-child {
+  color: var(--blue);
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  direction: ltr;
+}
 
-    .cat {
-      font-size: 24px;
-      filter: drop-shadow(0 0 8px #477bb755);
-    }
+.cat {
+  font-size: 24px;
+  filter: drop-shadow(0 0 8px #477bb755);
+}
 
-    .letter p {
-      font-size: 14px;
-      line-height: 2.5;
-      color: #d5dfef;
-      font-weight: 300;
-      margin: 0 0 22px;
-    }
+.letter p {
+  font-size: 14px;
+  line-height: 2.5;
+  color: #d5dfef;
+  font-weight: 300;
+  margin: 0 0 22px;
+}
 
-    .letter .english {
-      direction: ltr;
-      text-align: center;
-      color: var(--light-blue);
-      font-family: "Playfair Display", serif;
-      font-style: italic;
-      font-size: clamp(17px, 4.5vw, 21px);
-      line-height: 1.9;
-      margin: 28px 0 8px;
-    }
+.english {
+  direction: ltr;
+  text-align: center;
+  color: var(--light);
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(17px, 4.5vw, 21px);
+  line-height: 1.9;
+  margin: 28px 0 8px;
+}
 
-    .letter .source {
-      direction: ltr;
-      text-align: center;
-      color: #7f9dc5;
-      font-size: 11px;
-      line-height: 1.8;
-      margin-bottom: 27px;
-    }
+.source {
+  direction: ltr;
+  text-align: center;
+  color: #7f9dc5;
+  font-size: 11px;
+  line-height: 1.8;
+  margin-bottom: 27px;
+}
 
-    .section-label {
-      direction: ltr;
-      text-align: center;
-      color: var(--blue);
-      font-family: "Playfair Display", serif;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin: 38px 0 22px;
-    }
+.section-label {
+  direction: ltr;
+  text-align: center;
+  color: var(--blue);
+  font-family: "Playfair Display", serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 38px 0 22px;
+}
 
-    .letter .final-question {
-      direction: ltr;
-      text-align: center;
-      color: #e1edff;
-      font-family: "Playfair Display", serif;
-      font-style: italic;
-      font-size: clamp(22px, 5.7vw, 31px);
-      line-height: 1.8;
-      margin: 32px 0 18px;
-    }
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #6286b8;
+  margin: 28px 0;
+}
 
-    .letter .signature {
-      text-align: center;
-      color: var(--blue);
-      font-size: 20px;
-      margin: 20px 0 0;
-    }
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+}
 
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: #6286b8;
-      margin: 28px 0;
-      font-size: 13px;
-    }
+.final-question {
+  direction: ltr;
+  text-align: center;
+  color: #e1edff;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(23px, 6vw, 32px);
+  line-height: 1.8;
+  margin: 35px 0 20px;
+}
 
-    .divider::before,
-    .divider::after {
-      content: "";
-      height: 1px;
-      flex: 1;
-      background: #263b5b;
-    }
+.signature {
+  text-align: center;
+  color: var(--blue);
+  font-size: 23px;
+  margin: 22px 0 0;
+}
 
-    .question-area {
-      text-align: center;
-      margin-top: 35px;
-      padding: 28px 18px;
-      border: 1px solid #263b5b;
-      border-radius: 16px;
-      background: #0c1422cc;
-    }
+.question-area {
+  text-align: center;
+  margin-top: 24px;
+  padding: 27px 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #0c1422cc;
+}
 
-    .question-area h2 {
-      font-family: "Playfair Display", serif;
-      direction: ltr;
-      color: var(--blue);
-      font-size: 21px;
-      font-weight: 500;
-      margin: 0 0 10px;
-    }
+.question-area h2 {
+  direction: ltr;
+  color: var(--blue);
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
 
-    .question-area p {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 2;
-      margin: 0 0 22px;
-    }
+.small-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+.choice {
+  border: 1px solid #6f9bd2;
+  border-radius: 9px;
+  background: #294b76;
+  color: white;
+  padding: 12px 38px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all .25s;
+  box-shadow: 0 5px 20px #477bb722;
+}
 
-    .choice {
-      border: 1px solid #496a98;
-      border-radius: 9px;
-      background: #13233a;
-      color: #dceaff;
-      padding: 11px 24px;
-      cursor: pointer;
-      transition: all 0.25s;
-      font-size: 13px;
-    }
+.choice:hover {
+  background: #365d8d;
+  transform: translateY(-2px);
+}
 
-    .choice:hover {
-      background: #203958;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 20px #477bb722;
-    }
+.choice:disabled {
+  cursor: default;
+  opacity: .85;
+}
 
-    .choice.yes {
-      background: #294b76;
-      border-color: #8cbfff;
-    }
+.response {
+  display: none;
+  margin-top: 24px;
+  padding: 22px 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #101d30;
+}
 
-    .response {
-      display: none;
-      margin-top: 23px;
-      padding: 17px;
-      border: 1px solid #263b5b;
-      border-radius: 10px;
-      background: #101d30;
-      color: #dceaff;
-      line-height: 2.2;
-      font-size: 14px;
-      animation: fadeIn 0.5s ease both;
-    }
+.response.show {
+  display: block;
+  animation: fadeIn .7s ease both;
+}
 
-    .response.show {
-      display: block;
-    }
+.message-en {
+  direction: ltr;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(16px, 4vw, 19px);
+  line-height: 2;
+  color: var(--light);
+}
 
-    .response .cat {
-      display: block;
-      margin-bottom: 8px;
-    }
+.message-fa {
+  color: #aebfd7;
+  font-size: 12px;
+  line-height: 2.2;
+  margin-top: 15px;
+}
 
-    footer {
-      text-align: center;
-      margin-top: 32px;
-      color: #647995;
-      font-size: 11px;
-      direction: ltr;
-    }
+footer {
+  text-align: center;
+  margin-top: 32px;
+  color: #647995;
+  font-size: 11px;
+  direction: ltr;
+  line-height: 2;
+}
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    @keyframes letterIn {
-      from {
-        opacity: 0;
-        transform: translateY(25px) scale(0.98);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
+@keyframes letterIn {
+  from { opacity: 0; transform: translateY(25px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
 
-    @media (max-width: 420px) {
-      .page {
-        width: min(100% - 22px, 680px);
-        padding-top: 35px;
-      }
+@media (max-width: 420px) {
+  .page {
+    width: min(100% - 22px, 680px);
+    padding-top: 35px;
+  }
 
-      .letter {
-        padding: 22px 19px;
-      }
+  .letter { padding: 22px 19px; }
 
-      .letter p {
-        font-size: 13px;
-        line-height: 2.4;
-      }
+  .letter p {
+    font-size: 13px;
+    line-height: 2.4;
+  }
 
-      .envelope-button {
-        width: 170px;
-        height: 125px;
-      }
-    }
+  .envelope-button {
+    width: 170px;
+    height: 125px;
+  }
+}
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style>
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="stars" id="stars"></div>
+<div class="stars" id="stars" aria-hidden="true"></div>
 
-  <main class="page">
-    <header class="top">
-      <div class="tiny-cat">🐈‍⬛</div>
-      <div class="eyebrow">A LITTLE LETTER FOR</div>
-      <h1>Nota</h1>
-      <div class="subtitle">a little something, just for you</div>
-    </header>
+<main class="page">
+  <header class="top">
+    <div class="tiny-cat">🐈‍⬛</div>
+    <div class="eyebrow">A LITTLE LETTER FOR</div>
+    <h1>Nota</h1>
+    <div class="subtitle">a little something, just for you</div>
+  </header>
 
-    <p class="intro">
-      بعضی حرف‌ها رو نمی‌شه توی یه گفت‌وگوی معمولی جا داد.
-      <br>
-      برای همین، این یکی رو برات نوشتم.
-    </p>
+  <p class="intro">
+    بعضی حرف‌ها رو نمی‌شه توی یه گفت‌وگوی معمولی جا داد.
+    <br>
+    برای همین، این یکی رو برات نوشتم.
+  </p>
 
-    <section class="envelope-area">
-      <button class="envelope-button" id="envelope" aria-label="باز کردن نامه">
-        <span class="envelope-flap">✦</span>
-      </button>
-      <div class="envelope-label">یه نامه برای تو</div>
-      <div class="hint">برای باز کردنش روی پاکت بزن</div>
+  <section class="envelope-area">
+    <button class="envelope-button" id="envelope"
+      aria-label="باز کردن نامه" aria-expanded="false"
+      aria-controls="letterWrap">
+      <span class="envelope-flap">✦</span>
+    </button>
+    <div class="envelope-label">یه نامه برای تو</div>
+    <div class="hint">برای باز کردنش روی پاکت بزن</div>
+  </section>
+
+  <section class="letter-wrap" id="letterWrap">
+    <article class="letter">
+      <div class="letter-top">
+        <span>a little letter for nota</span>
+        <span class="cat">🐈‍⬛</span>
+      </div>
+
+      <p>نوتا،</p>
+
+      <p>
+        نمی‌دونم از کجا باید شروع کنم؛ شاید بعضی حس‌ها رو نتونی درست توضیح بدی،
+        حتی وقتی توی ذهنت هزار بار مرورشون کردی.
+      </p>
+
+      <p>
+        فقط می‌دونم بعضی آدما بی‌سروصدا میان و یه جای کوچیک از فکر آدم رو برای
+        خودشون می‌کنن. بعد یهو می‌بینی یه آهنگ، یه جمله یا حتی یه لحظه‌ی معمولی،
+        تو رو یادشون می‌اندازه.
+      </p>
+
+      <div class="english">
+        “I have for the first time found what I can truly love.”
+      </div>
+      <div class="source">— Jane Eyre, Charlotte Brontë</div>
+
+      <p>
+        نمی‌دونم قراره این آشنایی ما رو به کجا ببره؛ شاید یه خاطره‌ی قشنگ بشه،
+        شاید شروع چیزی که هیچ‌کدوممون انتظارش رو نداشتیم. ولی دوست دارم به‌جای
+        حدس زدن پایانش، فرصت بدم داستانمون نوشته بشه.
+      </p>
+
+      <p>
+        و راستش، اگه قرار باشه از بین تمام اتفاق‌های غیرمنتظره‌ی این پاییز
+        یکی رو انتخاب کنم، احتمالاً انتخابم تویی.
+      </p>
+
+      <div class="divider">🐈‍⬛</div>
+      <div class="section-label">THE WAY I SEE YOU</div>
+
+      <p>
+        نمی‌دونم خودت وقتی به آینه نگاه می‌کنی، خودت رو چطور می‌بینی؛
+        اما کاش می‌شد برای یه لحظه از چشم‌های من به خودت نگاه کنی.
+      </p>
+
+      <p>
+        به موهای فِرِت که انگار هیچ‌وقت قرار نیست دقیقاً همون‌جایی باشن که باید،
+        و شاید همین بی‌نظمیِ قشنگشونه که دوست‌داشتنی‌شون می‌کنه. به چشم‌های
+        قهوه‌ای‌ات؛ به اون رنگ گرمی که آدم دلش می‌خواد بیشتر از چند ثانیه توش مکث کنه.
+      </p>
+
+      <p>
+        نمی‌دونم چطور باید توضیح بدم که زیبایی بعضی آدما فقط به چیزی که می‌بینی
+        خلاصه نمی‌شه. گاهی توی جزئیات کوچیکی پنهونه که شاید خودشون حتی متوجهشون
+        نباشن؛ توی یه حالت صورت، یه نگاه، یا همون لحظه‌ای که بی‌خبر از همه‌چیز،
+        فقط خودشونن.
+      </p>
+
+      <div class="english">
+        “I wish I could show you, when you are lonely or in darkness,
+        the astonishing light of your own being.”
+      </div>
+      <div class="source">— commonly attributed to Hafiz</div>
+
+      <p>
+        شاید قشنگ‌ترین چیزی که می‌تونم بهت بگم این باشه که امیدوارم یه روز،
+        خودت رو همون‌قدر دوست‌داشتنی ببینی که از نگاه من هستی.
+      </p>
+
+      <div class="divider">🐈‍⬛</div>
+      <div class="section-label">SOMEWHERE BETWEEN YOUR WORDS</div>
+
+      <p>
+        و اما چیزی که شاید از همه سخت‌تر بتونم توضیحش بدم، حسیه که بهم می‌دی.
+      </p>
+
+      <p>
+        نمی‌دونم چطور ممکنه حرف زدن با یه نفر، این‌قدر آروم باشه. انگار برای
+        چند لحظه لازم نیست به چیزی فکر کنم، نگران چیزی باشم یا حواسم به گذشت
+        زمان باشه. فقط حرف می‌زنیم و من، بدون اینکه متوجه بشم، از دنیای اطرافم
+        فاصله می‌گیرم؛ نه چون می‌خوام ازش فرار کنم، بلکه چون برای چند لحظه،
+        همین‌جایی که هستم برام کافیه.
+      </p>
+
+      <p>
+        با تو، دقیقه‌ها یه جور عجیبی از دستم در می‌رن. میام چند تا حرف بزنم و
+        یهو می‌بینم زمان گذشته، بی‌اینکه بفهمم کِی. و شاید برای بقیه این فقط
+        یه گفت‌وگوی معمولی باشه، اما برای من، همین معمولی بودنش قشنگه. اینکه
+        لازم نیست اتفاق خارق‌العاده‌ای بیفته تا از بودن با یه نفر لذت ببرم.
+      </p>
+
+      <div class="english">
+        “There is a quiet kind of happiness in feeling at ease with someone.”
+      </div>
+      <div class="source">— an original line</div>
+
+      <p>
+        فکر می‌کنم آرامش همیشه به معنی سکوت کردن کنار یه نفر نیست. گاهی یعنی
+        بتونی ساعت‌ها باهاش حرف بزنی و نفهمی زمان چطور گذشته؛ یعنی بعد از یه
+        روز طولانی، صحبت کردن باهاش به‌جای اینکه خسته‌ترت کنه، یه گوشه‌ی آروم
+        توی ذهنت بسازه.
+      </p>
+
+      <p>
+        و نمی‌دونم اسم این حس رو دقیقاً چی باید بذارم. فقط می‌دونم بعضی مکالمه‌ها
+        وقتی تموم می‌شن، تموم نمی‌شن؛ یه تیکه‌شون باهات می‌مونه، حتی وقتی دیگه
+        گوشی دستت نیست.
+      </p>
+
+      <div class="english">maybe that's what makes you different.</div>
+
+      <div class="divider">🐈‍⬛</div>
+      <div class="section-label">I WANT TO KNOW YOU</div>
+
+      <p>
+        نمی‌خوام فقط قسمت‌های قشنگت رو بشناسم. دلم می‌خواد از چیزهای کوچیکی هم
+        بدونم که شاید برای بقیه مهم نباشن؛ از فکرهایی که نصفه‌شب به سرت می‌زنن،
+        از چیزهایی که خوشحالت می‌کنن و از روزهایی که ترجیح می‌دی کمتر حرف بزنی.
+      </p>
+
+      <p>
+        نمی‌خوام ازت یه تصویر بی‌نقص توی ذهنم بسازم. دلم می‌خواد خودت رو بشناسم؛
+        همون‌طوری که هستی، نه اون‌طوری که توی خیال من قشنگ‌تر به نظر می‌رسی.
+      </p>
+
+      <div class="english">
+        I want to know you, not just the idea of you.
+      </div>
+
+      <div class="divider">🐈‍⬛</div>
+      <div class="section-label">IF WE LET THIS STORY BEGIN</div>
+
+      <p>
+        شاید هنوز چیزهای زیادی درباره‌ی هم ندونیم. شاید هنوز کلی حرف مونده که
+        نزده‌ایم و کلی گوشه از وجودمون که برای هم غریبه‌ست. اما فکر می‌کنم
+        بعضی چیزها لازم نیست از همون اول معلوم باشن.
+      </p>
+
+      <p>
+        لازم نیست بدونیم آخر یه داستان قراره چی بشه تا بخوایم صفحه‌ی بعدش رو
+        بخونیم، نه؟
+      </p>
+
+      <p>
+        من نمی‌خوام عجله کنم و برای چیزی که هنوز داره شکل می‌گیره، اسم و رسم
+        بزرگی انتخاب کنم. فقط می‌خوام فرصت بدیم؛ به حرف‌هامون، به لحظه‌هایی که
+        کنار هم می‌گذرونیم، به چیزهایی که کم‌کم از هم کشف می‌کنیم.
+      </p>
+
+      <div class="english">
+        “What if this is the beginning of something beautiful?”
+      </div>
+      <div class="source">— an original line</div>
+
+      <p>
+        شاید این آشنایی تبدیل به چیزی بشه که حالا حتی نمی‌تونیم تصورش کنیم.
+        شاید هم مسیرش اون‌طوری که فکر می‌کنیم پیش نره. اما من ترجیح می‌دم
+        به‌جای اینکه از ترسِ پایان احتمالی، شروعش رو از دست بدم، بهش یه فرصت واقعی بدم.
+      </p>
+
+      <p>
+        چون به نظرم بعضی آدم‌ها ارزش این رو دارن که به‌جای فقط فکر کردن بهشون،
+        واقعاً قدمی به سمتشون برداری.
+      </p>
+
+      <p>
+        و من دلم می‌خواد اون قدم رو به سمت تو بردارم.
+      </p>
+
+      <div class="divider">🐈‍⬛</div>
+
+      <p class="final-question">
+        To the pretty girl,<br>
+        will you be my fall in love this October?
+      </p>
+
+      <p class="signature">🐈‍⬛</p>
+    </article>
+
+    <section class="question-area">
+      <h2>so, what do you say?</h2>
+      <div class="small-note">یه سؤال کوچیک مونده، نوتا.</div>
+
+      <button class="choice" id="yesBtn" type="button">Yes ♡</button>
+
+      <div class="response" id="response" aria-live="polite">
+        <span class="cat">🐈‍⬛</span>
+        <div class="message-en">
+          I won't see your answer here,<br>
+          but I'll be waiting to hear it from you.
+        </div>
+        <div class="message-fa">
+          جوابت رو اینجا نمی‌بینم، اما منتظر می‌مونم تا جواب رو از زبون خودت بشنوم.
+        </div>
+      </div>
     </section>
+  </section>
 
-    <section class="letter-wrap" id="letterWrap">
-      <article class="letter">
-        <div class="letter-top">
-          <span>a little letter for nota</span>
-          <span class="cat">🐈‍⬛</span>
-        </div>
+  <footer>
+    made with a little courage, just for nota.
+    <br>🐈‍⬛
+  </footer>
+</main>
 
-        <p>نوتا،</p>
+<script>
+  // ستاره‌های پس‌زمینه
+  const stars = document.getElementById("stars");
 
-        <p>
-          نمی‌دونم از کجا باید شروع کنم؛ شاید بعضی حس‌ها رو نتونی درست توضیح بدی،
-          حتی وقتی توی ذهنت هزار بار مرورشون کردی.
-        </p>
+  for (let i = 0; i < 65; i++) {
+    const star = document.createElement("span");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    star.style.animationDuration = (2 + Math.random() * 3) + "s";
+    stars.appendChild(star);
+  }
 
-        <p>
-          فقط می‌دونم بعضی آدما بی‌سروصدا میان و یه جای کوچیک از فکر آدم رو برای
-          خودشون می‌کنن. بعد یهو می‌بینی یه آهنگ، یه جمله یا حتی یه لحظه‌ی معمولی،
-          تو رو یادشون می‌اندازه.
-        </p>
+  // باز کردن پاکت
+  const envelope = document.getElementById("envelope");
+  const letterWrap = document.getElementById("letterWrap");
 
-        <div class="english">
-          “I have for the first time found what I can truly love.”
-        </div>
-        <div class="source">— Jane Eyre, Charlotte Brontë</div>
-
-        <p>
-          نمی‌دونم قراره این آشنایی ما رو به کجا ببره؛ شاید یه خاطره‌ی قشنگ بشه،
-          شاید شروع چیزی که هیچ‌کدوممون انتظارش رو نداشتیم. ولی دوست دارم به‌جای
-          حدس زدن پایانش، فرصت بدم داستانمون نوشته بشه.
-        </p>
-
-        <p>
-          و راستش، اگه قرار باشه از بین تمام اتفاق‌های غیرمنتظره‌ی این پاییز
-          یکی رو انتخاب کنم، احتمالاً انتخابم تویی.
-        </p>
-
-        <div class="divider">🐈‍⬛</div>
-
-        <div class="section-label">THE WAY I SEE YOU</div>
-
-        <p>
-          نمی‌دونم خودت وقتی به آینه نگاه می‌کنی، خودت رو چطور می‌بینی؛
-          اما کاش می‌شد برای یه لحظه از چشم‌های من به خودت نگاه کنی.
-        </p>
-
-        <p>
-          به موهای فِرِت که انگار هیچ‌وقت قرار نیست دقیقاً همون‌جایی باشن که باید،
-          و شاید همین بی‌نظمیِ قشنگشونه که دوست‌داشتنی‌شون می‌کنه. به چشم‌های
-          قهوه‌ای‌ات؛ به اون رنگ گرمی که آدم دلش می‌خواد بیشتر از چند ثانیه توش مکث کنه.
-        </p>
-
-        <p>
-          نمی‌دونم چطور باید توضیح بدم که زیبایی بعضی آدما فقط به چیزی که می‌بینی
-          خلاصه نمی‌شه. گاهی توی جزئیات کوچیکی پنهونه که شاید خودشون حتی متوجهشون
-          نباشن؛ توی یه حالت صورت، یه نگاه، یا همون لحظه‌ای که بی‌خبر از همه‌چیز،
-          فقط خودشونن.
-        </p>
-
-        <div class="english">
-          “I wish I could show you, when you are lonely or in darkness,
-          the astonishing light of your own being.”
-        </div>
-        <div class="source">— commonly attributed to Hafiz</div>
-
-        <p>
-          شاید قشنگ‌ترین چیزی که می‌تونم بهت بگم این باشه که امیدوارم یه روز،
-          خودت رو همون‌قدر دوست‌داشتنی ببینی که از نگاه من هستی.
-        </p>
-
-        <div class="divider">🐈‍⬛</div>
-
-        <div class="section-label">SOMEWHERE BETWEEN YOUR WORDS</div>
-
-        <p>
-          و اما چیزی که شاید از همه سخت‌تر بتونم توضیحش بدم، حسیه که بهم می‌دی.
-        </p>
-
-        <p>
-          نمی‌دونم چطور ممکنه حرف زدن با یه نفر، این‌قدر آروم باشه. انگار برای
-          چند لحظه لازم نیست به چیزی فکر کنم، نگران چیزی باشم یا حواسم به گذشت
-          زمان باشه. فقط حرف می‌زنیم و من، بدون اینکه متوجه بشم، از دنیای اطرافم
-          فاصله می‌گیرم؛ نه چون می‌خوام ازش فرار کنم، بلکه چون برای چند لحظه،
-          همین‌جایی که هستم برام کافیه.
-        </p>
-
-        <p>
-          با تو، دقیقه‌ها یه جور عجیبی از دستم در می‌رن. میام چند تا حرف بزنم و
-          یهو می‌بینم زمان گذشته، بی‌اینکه بفهمم کِی. و شاید برای بقیه این فقط
-          یه گفت‌وگوی معمولی باشه، اما برای من، همین معمولی بودنش قشنگه. اینکه
-          لازم نیست اتفاق خارق‌العاده‌ای بیفته تا از بودن با یه نفر لذت ببرم.
-        </p>
-
-        <div class="english">
-          “There is a quiet kind of happiness in feeling at ease with someone.”
-        </div>
-        <div class="source">— an original line</div>
-
-        <p>
-          فکر می‌کنم آرامش همیشه به معنی سکوت کردن کنار یه نفر نیست. گاهی یعنی
-          بتونی ساعت‌ها باهاش حرف بزنی و نفهمی زمان چطور گذشته؛ یعنی بعد از یه
-          روز طولانی، صحبت کردن باهاش به‌جای اینکه خسته‌ترت کنه، یه گوشه‌ی آروم
-          توی ذهنت بسازه.
-        </p>
-
-        <p>
-          و نمی‌دونم اسم این حس رو دقیقاً چی باید بذارم. فقط می‌دونم بعضی مکالمه‌ها
-          وقتی تموم می‌شن، تموم نمی‌شن؛ یه تیکه‌شون باهات می‌مونه، حتی وقتی دیگه
-          گوشی دستت نیست.
-        </p>
-
-        <div class="english">maybe that's what makes you different.</div>
-
-        <div class="divider">🐈‍⬛</div>
-
-        <div class="section-label">I WANT TO KNOW YOU</div>
-
-        <p>
-          نمی‌خوام فقط قسمت‌های قشنگت رو بشناسم. دلم می‌خواد از چیزهای کوچیکی هم
-          بدونم که شاید برای بقیه مهم نباشن؛ از فکرهایی که نصفه‌شب به سرت می‌زنن،
-          از چیزهایی که خوشحالت می‌کنن و از روزهایی که ترجیح می‌دی کمتر حرف بزنی.
-        </p>
-
-        <p>
-          نمی‌خوام ازت یه تصویر بی‌نقص توی ذهنم بسازم. دلم می‌خواد خودت رو بشناسم؛
-          همون‌طوری که هستی، نه اون‌طوری که توی خیال من قشنگ‌تر به نظر می‌رسی.
-        </p>
-
-        <div class="english">
-          I want to know you, not just the idea of you.
-        </div>
-
-        <div class="divider">🐈‍⬛</div>
-
-        <div class="section-label">IF WE LET THIS STORY BEGIN</div>
-
-        <p>
-          شاید هنوز چیزهای زیادی درباره‌ی هم ندونیم. شاید هنوز کلی حرف مونده که
-          نزده‌ایم و کلی گوشه از وجودمون که برای هم غریبه‌ست. اما فکر می‌کنم
-          بعضی چیزها لازم نیست از همون اول معلوم باشن.
-        </p>
-
-        <p>
-          لازم نیست بدونیم آخر یه داستان قراره چی بشه تا بخوایم صفحه‌ی بعدش رو
-          بخونیم، نه؟
-        </p>
-
-        <p>
-          من نمی‌خوام عجله کنم و برای چیزی که هنوز داره شکل می‌گیره، اسم و رسم
-          بزرگی انتخاب کنم. فقط می‌خوام فرصت بدیم؛ به حرف‌هامون، به لحظه‌هایی که
-          کنار هم می‌گذرونیم، به چیزهایی که کم‌کم از هم کشف می‌کنیم.
-        </p>
-
-        <div class="english">
-          “What if this is the beginning of something beautiful?”
-        </div>
-        <div class="source">— an original line</div>
-
-        <p>
-          شاید این آشنایی تبدیل به چیزی بشه که حالا حتی نمی‌تونیم تصورش کنیم.
-          شاید هم مسیرش اون‌طوری که فکر می‌کنیم پیش نره. اما من ترجیح می‌دم
-          به‌جای اینکه از ترسِ پایان احتمالی، شروعش رو از دست بدم، بهش یه فرصت واقعی بدم.
-        </p>
-
-        <p>
-          چون به نظرم بعضی آدم‌ها ارزش این رو دارن که به‌جای فقط فکر کردن بهشون،
-          واقعاً قدمی به سمتشون برداری.
-        </p>
-
-        <p>
-          و من دلم می‌خواد اون قدم رو به سمت تو بردارم.
-        </p>
-
-        <div class="divider">🐈‍⬛</div>
-
-        <p class="final-question">
-          To the pretty girl,<br>
-          will you be my fall in love this October?
-        </p>
-
-        <p class="signature">🐈‍⬛</p>
-      </article>
-
-      <section class="question-area">
-        <h2>so, what do you say?</h2>
-        <p>یه سؤال کوچیک مونده، نوتا.</p>
-
-        <div class="buttons">
-          <button class="choice yes" id="yesBtn">آره، چرا که نه؟</button>
-          <button class="choice" id="maybeBtn">بذار فکر کنم...</button>
-        </div>
-
-        <div class="response" id="response"></div>
-      </section>
-    </section>
-
-    <footer>
-      made with a little courage, just for nota.
-      <br>
-      <span style="color:#6286b8">🐈‍⬛</span>
-    </footer>
-  </main>
-
-  <script>
-    // ساخت ستاره‌های پس‌زمینه
-    const stars = document.getElementById("stars");
-
-    for (let i = 0; i < 65; i++) {
-      const star = document.createElement("span");
-      star.className = "star";
-      star.style.left = Math.random() * 100 + "%";
-      star.style.top = Math.random() * 100 + "%";
-      star.style.animationDelay = Math.random() * 3 + "s";
-      star.style.animationDuration = (2 + Math.random() * 3) + "s";
-      stars.appendChild(star);
+  envelope.addEventListener("click", () => {
+    if (!letterWrap.classList.contains("visible")) {
+      envelope.classList.add("opened");
+      envelope.setAttribute("aria-expanded", "true");
+      envelope.querySelector(".envelope-flap").textContent = "✧";
+      letterWrap.classList.add("visible");
     }
 
-    // باز کردن پاکت و نمایش نامه
-    const envelope = document.getElementById("envelope");
-    const letterWrap = document.getElementById("letterWrap");
+    setTimeout(() => {
+      letterWrap.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 150);
+  });
 
-    envelope.addEventListener("click", () => {
-      envelope.classList.add("opened");
-      letterWrap.classList.add("visible");
+  // دکمه Yes فقط پیام را نشان می‌دهد؛ جوابی ارسال نمی‌شود
+  const yesBtn = document.getElementById("yesBtn");
+  const response = document.getElementById("response");
 
-      envelope.querySelector(".envelope-flap").textContent = "✧";
-      envelope.setAttribute("aria-label", "نامه باز شد");
+  yesBtn.addEventListener("click", () => {
+    response.classList.add("show");
+    yesBtn.textContent = "♡";
+    yesBtn.disabled = true;
 
-      setTimeout(() => {
-        letterWrap.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }, 250);
+    response.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
     });
-
-    // پاسخ‌های پایانی
-    const response = document.getElementById("response");
-    const yesBtn = document.getElementById("yesBtn");
-    const maybeBtn = document.getElementById("maybeBtn");
-
-    yesBtn.addEventListener("click", () => {
-      response.innerHTML =
-        '<span class="cat">🐈‍⬛</span>' +
-        'پس این پاییز یه خاطره‌ی قشنگ برای ساختن داره. ' +
-        'ممنون که بهم فرصت دادی، نوتا. 🖤';
-      response.classList.add("show");
-      response.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    });
-
-    maybeBtn.addEventListener("click", () => {
-      response.innerHTML =
-        '<span class="cat">🐈‍⬛</span>' +
-        'شوسگول موسگوللل 😭<br>' +
-        'نتیجش برام نمیاد، گولم نزنننن 😭<br>' +
-        'بیا درست جواب بده ببینم منو می‌خوای یا نههههه ♡';
-      response.classList.add("show");
-      response.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    });
-  </script>
+  });
+</script>
 </body>
 </html>
