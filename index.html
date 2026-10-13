@@ -1,270 +1,106 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>for noota ♡</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Tahoma, Arial, sans-serif;
-      background: linear-gradient(135deg, #100c14, #24121f, #120e19);
-      color: #fff0f6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 22px 14px;
-      overflow-x: hidden;
-    }
-    .hearts {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .heart {
-      position: absolute;
-      bottom: -40px;
-      color: #ff8ab8;
-      opacity: 0.6;
-      animation: float 9s linear infinite;
-      font-size: 20px;
-    }
-    .heart:nth-child(1) { left: 8%; animation-delay: 0s; }
-    .heart:nth-child(2) { left: 25%; animation-delay: 3s; font-size: 14px; }
-    .heart:nth-child(3) { left: 48%; animation-delay: 1s; font-size: 25px; }
-    .heart:nth-child(4) { left: 70%; animation-delay: 5s; }
-    .heart:nth-child(5) { left: 88%; animation-delay: 2s; font-size: 16px; }
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0); opacity: 0; }
-      15% { opacity: 0.65; }
-      100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
-    }
-    .card {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 480px;
-      max-height: 92vh;
-      overflow-y: auto;
-      padding: 30px 22px;
-      text-align: center;
-      background: rgba(32, 20, 34, 0.94);
-      border: 1px solid rgba(255, 160, 200, 0.35);
-      border-radius: 25px;
-      box-shadow: 0 0 35px rgba(255, 90, 160, 0.12);
-      scrollbar-color: #b95b87 #241421;
-      scrollbar-width: thin;
-    }
-    .cat {
-      font-size: 45px;
-      margin-bottom: 8px;
-    }
-    .tiny {
-      color: #f2a8c7;
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-    h1 {
-      color: #ffb6d2;
-      font-size: 25px;
-      line-height: 1.8;
-      margin: 12px 0;
-    }
-    p {
-      line-height: 2.1;
-      font-size: 15px;
-    }
-    .intro {
-      color: #f7dce8;
-      margin-bottom: 24px;
-    }
-    button {
-      font-family: inherit;
-      font-size: 15px;
-      border: none;
-      border-radius: 14px;
-      padding: 13px 23px;
-      cursor: pointer;
-      transition: 0.2s;
-      margin: 6px;
-    }
-    button:active {
-      transform: scale(0.96);
-    }
-    .main-btn {
-      background: #f5a0c3;
-      color: #281321;
-      font-weight: bold;
-      box-shadow: 0 5px 18px rgba(245, 160, 195, 0.2);
-    }
-    .main-btn:hover {
-      background: #ffc1d9;
-    }
-    .letter {
-      display: none;
-      text-align: right;
-      margin-top: 22px;
-      padding: 20px 17px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.045);
-      border: 1px solid rgba(255, 182, 210, 0.2);
-      animation: appear 0.7s ease;
-    }
-    .letter h2 {
-      color: #ffb6d2;
-      text-align: center;
-      font-size: 22px;
-    }
-    .letter p {
-      color: #f8e7ef;
-      font-size: 14px;
-      line-height: 2.3;
-    }
-    .question {
-      text-align: center;
-      font-size: 20px !important;
-      color: #ffb6d2 !important;
-      font-weight: bold;
-      margin-top: 24px;
-    }
-    .response {
-      display: none;
-      text-align: center;
-      color: #ffb6d2;
-      padding-top: 14px;
-      line-height: 2;
-      animation: appear 0.5s ease;
-    }
-    .secondary-btn {
-      background: transparent;
-      border: 1px solid #d88bad;
-      color: #ffd5e5;
-    }
-    .footer {
-      margin-top: 24px;
-      color: #bd8da5;
-      font-size: 12px;
-    }
-    @keyframes appear {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 380px) {
-      .card { padding: 24px 16px; }
-      h1 { font-size: 22px; }
-      p { font-size: 14px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="hearts">
-    <span class="heart">♡</span>
-    <span class="heart">♥</span>
-    <span class="heart">♡</span>
-    <span class="heart">♥</span>
-    <span class="heart">♡</span>
+<section class="letter" id="letter">
+  <h2>برای نوتای من، از ته قلبم ♡</h2>
+
+  <p>
+    نوتا، قشنگ‌ترین اتفاق بعضی روزها می‌تونه خیلی ساده باشه؛
+    مثلاً دیدن یه پیام از تو، خوندن حرف‌هات یا حتی فکر کردن بهت
+    وقتی وسط یه روز معمولی یهو یادم می‌افتی.
+    نمی‌دونم چطور این‌قدر آروم‌آروم برام خاص شدی،
+    ولی حالا حضور تو یکی از چیزهاییه که واقعاً خوشحالم می‌کنه.
+  </p>
+
+  <p>
+    من فقط از حرف زدن باهات خوشم نمیاد؛
+    از این خوشم میاد که دارم تو رو می‌شناسم.
+    از اینکه می‌تونم کم‌کم دنیای تو رو ببینم،
+    بفهمم چی خوشحالت می‌کنه، چی ناراحتت می‌کنه،
+    چه چیزهایی توی ذهنت می‌گذره و چه چیزهایی باعث می‌شن
+    چشم‌هات برق بزنن.
+    دلم می‌خواد حتی از معمولی‌ترین اتفاقات روزت هم برام بگی،
+    چون وقتی پای تو وسطه، معمولی‌ترین چیزها هم برام قشنگ می‌شن.
+  </p>
+
+  <p>
+    یه جوری وارد روزهام شدی که حالا بعضی وقت‌ها
+    دلم می‌خواد اتفاقی بیفته فقط برای اینکه بتونم برات تعریفش کنم.
+    یه آهنگ بشنوم و دلم بخواد تو هم بشنویش،
+    یه چیز بامزه ببینم و اولین کسی که به ذهنم می‌رسه تو باشی،
+    یا آخر شب قبل از خواب به حرف‌هایی فکر کنم که با هم زدیم.
+    این جزئیات کوچیکن، ولی برای من معنای بزرگی دارن.
+  </p>
+
+  <p>
+    دوست دارم روزهایی رو تجربه کنیم که توشون کلی بخندیم،
+    درباره‌ی چیزهای بی‌اهمیت حرف بزنیم،
+    برای هم آهنگ بفرستیم و از اتفاقات کوچیک ذوق کنیم.
+    دوست دارم وقتی روزت سخت بوده، کسی باشم که دلت بخواد
+    باهاش حرف بزنی؛ وقتی خوشحالی، یکی از آدم‌هایی باشم
+    که می‌خوای خوشحالیت رو باهاشون تقسیم کنی.
+    دلم می‌خواد کنار هم خاطره‌هایی بسازیم که بعداً
+    یادآوریشون لبخند بیاره روی صورتمون.
+  </p>
+
+  <p>
+    نمی‌خوام فقط یه آدم گذری توی زندگی هم باشیم.
+    دلم می‌خواد اگه تو هم همین حس رو داری،
+    فرصت بدیم این آشنایی قشنگ‌تر و عمیق‌تر بشه.
+    نه یه چیز اجباری، نه یه قول بزرگ که هنوز وقتش نرسیده؛
+    فقط دو نفر که همدیگه رو انتخاب می‌کنن،
+    به هم اهمیت می‌دن و برای شناختن هم وقت می‌ذارن.
+  </p>
+
+  <p>
+    و اگه بخوام کاملاً صادق باشم،
+    من تو رو فقط به چشم یه دوست نمی‌بینم، نوتا.
+    تو برام اون دختر قشنگی هستی که دلم می‌خواد
+    بیشتر بهش نزدیک بشم، بیشتر بشناسمش
+    و یه جای مخصوص توی قلبم بهش بدم.
+    دلم می‌خواد پیام‌هات فقط پیام‌های یه دوست نباشن؛
+    
+   ♡
+  </p>
+
+  <p>
+    اگه ازم بپرسی چرا تو، جوابم اینه که چون تویی.
+    چون آشنایی باهات برای من حس قشنگی داشته،
+    چون دلم می‌خواد بیشتر از قبل توی زندگی هم حضور داشته باشیم،
+    و چون بین تمام چیزهایی که می‌تونستم بهت بگم،
+    ترجیح دادم به‌جای پنهون کردن حسم،
+    این فرصت رو به خودمون بدم که ببینیم چی می‌شیم.
+  </p>
+
+  <p>
+    حالا رسیدیم به همون سؤالی که تمام این نامه برای گفتنش بود...
+    <br>
+    <strong>نوتا، دوست‌دخترم می‌شی؟ ♡</strong>
+  </p>
+
+  <p class="question" dir="ltr">
+    To the pretty girl, will you be my fall in love this October? ♡
+  </p>
+
+  <div style="text-align:center">
+    <button class="main-btn" onclick="answerYes()">
+      آره، می‌شم ♡
+    </button>
+
+    <button class="secondary-btn" onclick="answerMaybe()">
+      بذار فکر کنم...
+    </button>
   </div>
-  <main class="card">
-    <div id="start">
-      <div class="cat">🐈‍⬛</div>
-      <div class="tiny">a little something for you ♡</div>
-      <h1>یه چیزی هست که عسل می‌خواد بهت بگه...</h1>
-      <p class="intro">
-        یه چیزی که شاید گفتنش رو در دنیای واقعی سخت باشه،
-        برای همین تصمیم گرفتم اینجا برات بنویسمش. ♡
-      </p>
-      <button class="main-btn" onclick="openLetter()">
-        برای تو 💌
-      </button>
-    </div>
-    <section class="letter" id="letter">
-      <h2>برای نوتا، از ته قلبم ♡</h2>
-      <p>
-        راستش نمی‌دونم دقیقاً از کجا شروع کنم، چون هر بار می‌خوام
-        درباره‌ی حسم بهت حرف بزنم، کلی حرف توی ذهنم جمع می‌شه
-        و آخرش نمی‌دونم کدومشون رو اول بگم.
-      </p>
-      <p>
-        نمی‌دونم تو از کی برای من این‌قدر خاص شدی. فقط می‌دونم
-        حرف زدن باهات یکی از اون چیزهای کوچیکیه که می‌تونه روزم
-        رو بهتر کنه. حتی وقتی روزم خوب نبوده، گاهی یه گفت‌وگوی
-        ساده با تو باعث می‌شه همه‌چی کمی قابل‌تحمل‌تر بشه.
-      </p>
-      <p>
-        دوست دارم بیشتر بشناسمت؛ چیزهایی که خوشحالت می‌کنن،
-        چیزهایی که ناراحتت می‌کنن، فکرهایی که نصف شب به ذهنت
-        می‌رسن و حتی ساده‌ترین اتفاقاتی که توی روزت می‌افتن.
-        دوست دارم ازت بشنوم، حتی وقتی حرف خاصی برای گفتن نداری.
-      </p>
-      <p>
-        شاید نتونم همیشه بهترین کلمات رو برای توصیف حسم پیدا کنم،
-        اما چیزی که می‌دونم اینه که آشنایی با تو برام قشنگ بوده.
-        تو کم‌کم تبدیل شدی به کسی که دوست دارم بیشتر از قبل
-        توی زندگی‌م حضور داشته باشه.
-      </p>
-      <p>
-        این حرف‌ها رو نمی‌زنم که تحت فشارت بذارم یا مجبور باشی
-        چیزی رو که نمی‌خوای جواب بدی. احساس تو هم به اندازه‌ی
-        احساس من مهمه و می‌خوام بتونی کاملاً صادق باشی.
-        هر جوابی داشته باشی، ترجیح می‌دم واقعی باشه.
-      </p>
-      <p>
-        فقط دلم نمی‌خواست این همه حس قشنگ رو توی خودم نگه دارم
-        و هیچ‌وقت بهت نگم. از اینکه شناختمت خوشحالم و دلم می‌خواد
-        ببینم اگه هر دومون بخوایم، این آشنایی می‌تونه به کجا برسه.
-      </p>
-      <p>
-        پس اینم حرفی که می‌خواستم از اول بگم؛
-        <br>
-        <strong>من ازت خوشم میاد، نوتا. بیشتر از یه دوست. ♡</strong>
-      </p>
-      <p class="question">
-        نوتا، دوست‌دخترم می‌شی؟ ♡
-      </p>
-      <div style="text-align:center">
-        <button class="main-btn" onclick="answerYes()">
-          آره، می‌شم ♡
-        </button>
-        <button class="secondary-btn" onclick="answerMaybe()">
-          بذار فکر کنم...
-        </button>
-      </div>
-      <div class="response" id="yes">
-        <div style="font-size:36px">💗🥹💗</div>
-        <h2>صبر کنننن، واقعاً؟! ♡</h2>
-        <p>فکر کنم الان دارم بی‌دلیل لبخند می‌زنم...</p>
-      </div>
-      <div class="response" id="maybe">
-        <div style="font-size:32px">🫶🏻</div>
-        <p>
-          اشکالی نداره، قشنگم. عجله‌ای نیست.
-          هر وقت آماده بودی، با خیال راحت بهم بگو. ♡
-        </p>
-      </div>
-    </section>
-    <div class="footer">
-      made with love, just for you ♡
-    </div>
-  </main>
-  <script>
-    function openLetter() {
-      document.getElementById("start").style.display = "none";
-      document.getElementById("letter").style.display = "block";
-    }
-    function answerYes() {
-      document.getElementById("yes").style.display = "block";
-      document.getElementById("maybe").style.display = "none";
-    }
-    function answerMaybe() {
-      document.getElementById("maybe").style.display = "block";
-      document.getElementById("yes").style.display = "none";
-    }
-  </script>
-</body>
-</html>
+
+  <div class="response" id="yes">
+    <div style="font-size:36px">💗🥹💗</div>
+    <h2>صبر کنننن، واقعاً؟! ♡</h2>
+    <p>یعنی از این اکتبر به بعد، یه دلیل قشنگ‌تر برای لبخند زدن دارم؟</p>
+  </div>
+
+  <div class="response" id="maybe">
+    <div style="font-size:32px">😭🫵🏻💗</div>
+    <h2>شوسگول موسگوللل 😭</h2>
+    <p>
+      نتیجه‌ش برام نمیاد، گولم نزنننن 😭
+      بیا درست جواب بده ببینم منو می‌خوای یا نههههه ♡
+    </p>
+  </div>
+</section>
