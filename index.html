@@ -1,111 +1,57 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>یه سؤال کوچولو ♡</title>
-<style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(145deg, #202a3a, #11151e 55%, #080a0f);
-  color: #c0ccdc;
-  font-family: Tahoma, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-}
-.card {
-  width: 90%;
-  max-width: 390px;
-  padding: 30px 22px;
-  border: 1px solid #39475b;
-  border-radius: 22px;
-  background: rgba(16, 21, 30, 0.96);
-  box-shadow: 0 15px 45px rgba(0,0,0,.25);
-  z-index: 2;
-}
-.cat { font-size: 58px; margin-bottom: 8px; }
-.envelope { font-size: 68px; cursor: pointer; margin: 12px 0; }
-h1 { color: #c0ccdc; font-size: 23px; font-weight: normal; line-height: 1.8; }
-p { color: #9daabd; font-size: 14px; line-height: 2; }
-button {
-  border: 1px solid #53657e;
-  border-radius: 25px;
-  padding: 12px 19px;
-  margin: 7px 3px;
-  background: #34465d;
-  color: #e0e6ef;
-  font-size: 14px;
-  font-family: Tahoma, sans-serif;
-  cursor: pointer;
-}
-#no { background: #202734; border-color: #424d5d; }
-#letter { display: none; }
-#answer { margin-top: 18px; color: #c0ccdc; }
-.heart {
-  position: fixed;
-  bottom: -30px;
-  color: #657d9a;
-  opacity: .65;
-  animation: float 8s linear forwards;
-  pointer-events: none;
-  z-index: 1;
-}
-@keyframes float {
-  0% { transform: translateY(0); opacity: 0; }
-  15% { opacity: .65; }
-  100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
-}
-</style>
-</head>
-<body>
-<div class="card">
-  <div class="cat">🐈‍⬛</div>
-  <div class="envelope" onclick="openLetter()">💌</div>
-  <div id="start">
-    <h1>یه سؤال کوچولو...</h1>
-    <p>یه نفر یه چیزی می‌خواد ازت بپرسه ♡</p>
-    <button onclick="openLetter()">نامه‌تو باز کن</button>
-  </div>
-  <div id="letter">
-    <h1>دوست‌دخترم می‌شی؟ ♡</h1>
-    <p>
-      تو برام آدم خیلی خاصی هستی.<br>
-      روزام رو یه کم قشنگ‌تر می‌کنی،<br>
-      و خواستم اینو بهت بگم.
-    </p>
-    <button onclick="yesAnswer()">آرههه ♡</button>
-    <button id="no" onclick="maybeAnswer()">هنوز مطمئن نیستم</button>
-    <p id="answer"></p>
-  </div>
+<div id="letter">
+  <h1>عسل می‌خواد یه چیزی بهت بگه... ♡</h1>
+  <p>
+    راستش نمی‌دونم دقیقاً از کجا شروع کنم،
+    چون بعضی احساسا خیلی قشنگ‌تر از اونی‌ان
+    که بشه راحت با کلمه‌ها توضیحشون داد. ♡
+    <br><br>
+    من ازت خوشم میاد، نوتا.
+    و شاید بیشتر از چیزی که تا الان تونستم بهت نشون بدم.
+    <br><br>
+    می‌دونی، صحبت کردن با تو برای من یه حس خاصی داره.
+    از اون حسایی که نمی‌دونی چطوری توضیحشون بدی،
+    فقط می‌دونی وقتی اسمت رو می‌بینی،
+    یه لبخند کوچیک میاد روی لبت.
+    <br><br>
+    تو یه جوری گذروندن روزام رو راحت‌تر کردی
+    که شاید خودت حتی متوجهش نباشی.
+    بعضی روزا ممکنه خسته باشم،
+    ممکنه همه‌چی اون‌جوری که می‌خوام پیش نره،
+    ولی حرف زدن با تو می‌تونه حال اون روزم رو عوض کنه.
+    <br><br>
+    صحبت کردن باهات انقدر شیرینه که گاهی دلم می‌خواد
+    زمان یه کم آروم‌تر بگذره،
+    فقط برای اینکه بیشتر باهات حرف بزنم.
+    دوست دارم از روزت بشنوم،
+    از چیزایی که خوشحالت می‌کنن،
+    از چیزایی که ناراحتت می‌کنن،
+    از فکرایی که توی سرت می‌چرخن
+    و حتی از معمولی‌ترین اتفاقای روزت.
+    <br><br>
+    دلم می‌خواد بیشتر بشناسمت؛
+    نه فقط اون قسمتایی از تو که همه می‌بینن،
+    بلکه اون قسمتایی که شاید کمتر کسی فرصت شناختنشون رو داشته.
+    دوست دارم دلیل خنده‌هات رو بدونم،
+    وقتی ناراحتی کنارت باشم
+    و وقتی اتفاق خوبی برات می‌افته،
+    یکی از آدمایی باشم که دلت می‌خواد بهشون خبر بدی.
+    <br><br>
+    نمی‌خوام وانمود کنم که می‌دونم آینده چی می‌شه،
+    یا ازت انتظار داشته باشم همین الان جواب خاصی بهم بدی.
+    فقط نمی‌خواستم احساسم رو پشت شوخی‌ها و حرفای معمولی قایم کنم
+    و هیچ‌وقت بهت نگم که چقدر برام خاص شدی.
+    <br><br>
+    شاید این نامه نتونه تمام چیزایی رو که توی دلمه بگه،
+    ولی حداقل می‌خوام بدونی که آشنایی با تو
+    یکی از اتفاقای قشنگ این روزای من بوده.
+    و من واقعاً خوشحالم که تو رو شناختم. ♡
+    <br><br>
+    خب... حالا که این همه حرف زدم،
+    بذار بالاخره اون چیزی رو که از اول می‌خواستم بپرسم، بپرسم...
+  </p>
+  <h1>نوتا، دوست‌دخترم می‌شی؟ ♡</h1>
+  <p>دلم می‌خواد این حس قشنگ رو با تو تجربه کنم. 🩶</p>
+  <button onclick="yesAnswer()">آره، می‌شم ♡</button>
+  <button id="no" onclick="maybeAnswer()">هنوز مطمئن نیستم</button>
+  <p id="answer"></p>
 </div>
-<script>
-function openLetter() {
-  document.getElementById("start").style.display = "none";
-  document.getElementById("letter").style.display = "block";
-}
-function yesAnswer() {
-  document.getElementById("answer").innerHTML =
-    "تو الان منو خیلی خوشحال کردی. ♡";
-}
-function maybeAnswer() {
-  document.getElementById("answer").innerHTML =
-    "اشکالی نداره، هرچقدر لازم داری وقت بذار. ♡";
-}
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = Math.random() > .5 ? "♡" : "♥";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (14 + Math.random() * 15) + "px";
-  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 10000);
-}, 800);
-</script>
-</body>
-</html>
