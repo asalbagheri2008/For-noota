@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Question ♡</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #202a3a, #11151e 55%, #080a0f);
+  color: #b7c4d5;
+  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.card {
+  width: 90%;
+  max-width: 390px;
+  padding: 30px 22px;
+  border: 1px solid #39475b;
+  border-radius: 22px;
+  background: rgba(16, 21, 30, 0.96);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+.cat {
+  font-size: 58px;
+  margin-bottom: 8px;
+}
+.envelope {
+  font-size: 68px;
+  cursor: pointer;
+  margin: 12px 0;
+  transition: transform 0.3s ease;
+}
+.envelope:hover {
+  transform: translateY(-4px);
+}
+h1 {
+  color: #c0ccdc;
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+p {
+  color: #9daabd;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+button {
+  border: 1px solid #53657e;
+  border-radius: 25px;
+  padding: 12px 19px;
+  margin: 7px 3px;
+  background: #34465d;
+  color: #e0e6ef;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+button:hover {
+  background: #41546c;
+}
+#no {
+  background: #202734;
+  border-color: #424d5d;
+}
+#letter {
+  display: none;
+}
+#answer {
+  margin-top: 18px;
+  color: #c0ccdc;
+}
+#music {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #293443;
+}
+.music-note {
+  font-size: 12px;
+  color: #8493a8;
+}
+.heart {
+  position: fixed;
+  bottom: -30px;
+  color: #657d9a;
+  opacity: 0.65;
+  animation: float 8s linear forwards;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="cat">🐈‍⬛</div>
+  <div class="envelope" onclick="openLetter()">💌</div>
+  <div id="start">
+    <h1>A little question...</h1>
+    <p>Someone has something to ask you ♡</p>
+    <button onclick="openLetter()">Open your letter</button>
+  </div>
+  <div id="letter">
+    <h1>Will you be my girlfriend? ♡</h1>
+    <p>
+      You're someone really special to me.<br>
+      You make my days a little better,<br>
+      and I wanted you to know that.
+    </p>
+    <button onclick="yesAnswer()">Yes ♡</button>
+    <button id="no" onclick="maybeAnswer()">Not sure yet</button>
+    <p id="answer"></p>
+  </div>
+  <div id="music">
+    <button onclick="toggleMusic()" id="musicButton">
+      ▶ Play our song
+    </button>
+    <audio id="song" src="song.mp3" loop></audio>
+    <p class="music-note">
+      a little song for you ♡
+    </p>
+  </div>
+</div>
+<script>
+function openLetter() {
+  document.getElementById("start").style.display = "none";
+  document.getElementById("letter").style.display = "block";
+}
+function yesAnswer() {
+  document.getElementById("answer").innerHTML =
+    "You just made me so happy. ♡";
+}
+function maybeAnswer() {
+  document.getElementById("answer").innerHTML =
+    "That's okay. Take your time, I'll be here. ♡";
+}
+function toggleMusic() {
+  const song = document.getElementById("song");
+  const button = document.getElementById("musicButton");
+  if (song.paused) {
+    song.play().then(() => {
+      button.innerHTML = "❚❚ Pause our song";
+    }).catch(() => {
+      button.innerHTML = "Song unavailable — add song.mp3";
+    });
+  } else {
+    song.pause();
+    button.innerHTML = "▶ Play our song";
+  }
+}
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (14 + Math.random() * 15) + "px";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 10000);
+}, 800);
+</script>
+</body>
+</html>
